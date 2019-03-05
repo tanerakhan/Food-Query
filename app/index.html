@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--build:css css/styles.min.css-->
+    <link rel="stylesheet" href="css/styles.css">
+    <!--endbuild-->
+  </head>
+
+  <body>
+    <!-- fullContainer -->
+    <div class="fullContainer">
+      <!-- container -->
+      <div class="container">
+        <header>
+          <div class="headerEl">
+            <span>Yemek Ara, Listele, Sipariş Et!</span>
+          </div>
+        </header>
+        <section>
+
+          <!-- search -->
+          <div class="search">
+            <input type="text" id="myInput" onkeyup="search()" placeholder="İçeriklerde ara..">
+          </div>
+          <!-- search -->
+
+          <!-- content -->
+          <div class="content">
+
+            <!-- searchHeadLine -->
+            <div class="searchHeadLine">
+              <span>yemek arama listesi</span>
+            </div>
+            <!-- searchHeadLine -->
+
+            <!-- searchList -->
+            <div class="searchList" id="searchList">
+              <!-- listItem -->
+              <div id="foodSearch">
+                <div id="templateForList" class="searchFound" style="display:none;">
+                  <a href="javascript:;">
+                    <div class="listItem" id="listItem">
+                      <div id="productList" class="productList">
+                        <img src="" alt="">
+                        <span>%product%</span>
+                      </div>
+                      <div id="priceList" class="priceList">
+                      </div>
+                      <div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div id="templateForListProduct" class="searchFound" style="display:none;">
+                  <a href="javascript:;">
+                    <div class="listItem" id="listItem">
+                      <div id="productList" class="productList">
+                        <img src="" alt="">
+                        <span>%product%</span>
+                      </div>
+                      <div id="priceList" class="priceList">
+                        <span>%price%</span>
+                      </div>
+                      <div>
+                        <button class="addcart" data-name="%product%" data-price="%price%" data-desc="%description%"
+                          onclick="addcart(this);">sepete ekle!</button>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+              </div>
+              <!-- listItem -->
+            </div>
+            <!-- searchList -->
+
+          </div>
+          <!-- content -->
+
+        </section>
+      </div>
+      <!-- container -->
+    </div>
+    <!-- fullContainer -->
+
+    <div id="bgOverlay"></div>
+
+
+    <div id="popup">
+
+
+      <form name="order" id="order">
+        <table>
+          <tr>
+            <td>
+              <label for="productID">Seçilen Ürün:</label>
+            </td>
+            <td>
+              <input id="productID" name="product" type="hidden" size="28" required />
+              <span id="_productID"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="product">Ürün Açıklaması:</label>
+            </td>
+            <td>
+              <span id="_product_desc"></span>
+              <input id="product_desc" name="product" type="hidden" size="28" required />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="quantity">Adet:</label>
+            </td>
+            <td>
+              <input id="quantity" name="quantity" width="196px" required />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="price">Fiyat:</label>
+            </td>
+            <td>
+              <span id="_price"></span>
+              <input id="price" name="price" type="hidden" size="28" required />
+
+            </td>
+          </tr>
+        </table>
+        <input type="button" id="btnAddProduct" onclick="addProduct();" value="Sepete Ekle">
+      </form>
+      <br>
+      <div id="addToCardDesc"></div>
+      <div id="addToCardDone"></div>
+      <div class="totalPrice">
+        <span>Ödenecek Toplam Tutar</span>
+        <span id="totalPriceAmount"></span>
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+
+    <!--build:js js/main.min.js -->
+    <script src="js/main.js"></script>
+    <!-- endbuild -->
+  </body>
+
+</html>

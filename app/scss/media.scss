@@ -1,0 +1,11 @@
+@import './var.scss';
+
+
+@media screen and (min-width:281px) and (max-width:800px) {
+    #popup {
+        width: $full;
+        overflow: auto;
+        overflow-x: hidden;
+        max-height: $ten * 35;
+    }
+}

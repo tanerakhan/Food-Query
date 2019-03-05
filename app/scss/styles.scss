@@ -1,0 +1,288 @@
+@import './reset.scss';
+
+.container {
+  header {
+    width: $full;
+    background-color: #ededed;
+    border-bottom: 1px #d8d8d8 solid;
+    display: $flex;
+
+    .headerEl {
+      width: $full;
+      max-width: $ten * 120;
+      display: $flex;
+      justify-content: $center;
+      margin: auto;
+      text-transform: uppercase;
+      color: #ab0012;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+
+      span,
+      div {
+        width: $full / 2;
+        text-align: $center;
+        padding: $ten * 2 $ten;
+
+      }
+    }
+  }
+
+  section {
+    margin: $ten $zero;
+
+    .search {
+      width: $full;
+      max-width: $ten * 120;
+      margin: auto;
+
+      input {
+        border: 1px #ededed solid;
+        padding: $ten;
+        width: $full;
+        border-radius: $ten - 7;
+        font-size: 13px;
+        color: #292929;
+        margin: $ten $zero;
+      }
+    }
+
+    .content {
+      width: $full;
+      max-width: $ten * 120;
+      margin: auto;
+      background-color: #efefef;
+      padding: $ten;
+      border-radius: $ten - 7;
+
+      .searchHeadLine {
+        background-color: $white;
+        padding: $ten;
+        border: 1px #ededed solid;
+        border-radius: $ten - 7;
+
+        span {
+          font-size: 12px;
+          font-weight: 700;
+          color: #ab0012;
+          text-transform: uppercase;
+        }
+      }
+
+      .searchList {
+        background-color: $white;
+        padding: $ten;
+        border: 1px #ededed solid;
+        border-radius: $ten - 7;
+        margin-top: $ten;
+
+        #foodSearch {
+          div {
+            #templateForList {
+              background-color: #ab0012;
+              padding: $ten;
+              margin-top: $ten;
+              border-bottom: 1px #fff solid;
+
+              a {
+                color: $white;
+              }
+
+            }
+
+            #templateForListProduct {
+              background-color: #e1e1e1;
+              border-bottom: 1px #fff solid;
+              padding: $ten;
+            }
+
+            div {
+              padding: $ten / 2;
+              border-radius: $ten - 7;
+
+              a {
+                color: #484848;
+
+                .listItem {
+                  display: $flex;
+                  width: $full;
+                  align-items: $center;
+
+                  div {
+                    width: $full / 3;
+                    display: $flex;
+                    justify-content: $center;
+
+                    button {
+                      @include addToCard
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+#popup {
+  display: $none;
+  position: fixed;
+  top: $full / 2;
+  left: $full / 2;
+  transform: translate(-50%, -50%);
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, .2);
+  padding: $ten;
+  color: #928181;
+  border-radius: $ten - 7;
+  width: $full / 2;
+
+  form {
+    display: $flex;
+    flex-wrap: wrap;
+    justify-content: $center;
+    flex-direction: column;
+    align-content: $center;
+
+    table {
+      width: $full;
+      padding: $ten;
+      background-color: #e4e4e4;
+      border-radius: $ten - 3;
+      margin-bottom: $ten;
+      font-size: $ten + 3;
+      color: #484848;
+
+      tr {
+        td {
+          padding: $ten;
+          background-color: #fff;
+          border-radius: $ten - 7;
+
+          input {
+            width: $full;
+            border: 1px #dedede solid;
+            border-radius: $ten - 7;
+            padding: $ten;
+          }
+        }
+      }
+
+    }
+
+    #btnAddProduct {
+      @include addToCard
+    }
+  }
+
+  #addToCardDesc {
+    .addDelButton {
+      padding: $ten;
+      border: $none;
+      border-radius: $ten - 7;
+      cursor: pointer;
+      color: #48912a;
+    }
+
+  }
+
+  #addToCardDesc,
+  #addToCardDone {
+    table {
+      width: $full;
+      padding: $ten;
+      background-color: #e4e4e4;
+      border-radius: $ten - 3;
+      margin-bottom: $ten;
+      font-size: $ten + 3;
+      color: #484848;
+
+      tr {
+        td {
+          padding: $ten;
+          background-color: #fff;
+          border-radius: $ten - 7;
+
+          input {
+            width: $full;
+            border: 1px #dedede solid;
+            border-radius: $ten - 7;
+            padding: $ten;
+          }
+        }
+      }
+    }
+  }
+
+  #addToCardDone {
+    #tblCart {
+      tr {
+        td {
+          button {
+            padding: $ten;
+            border-radius: $ten - 7;
+            font-size: 13px;
+
+            &:nth-child(2) {
+              margin-right: $ten;
+            }
+          }
+
+          .quantity {
+            border: $none;
+            background-color: #48912a;
+            color: $white;
+
+
+          }
+
+          .removeItem {
+            border: $none;
+            background-color: #ab0012;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  .totalPrice {
+    display: $flex;
+    justify-content: flex-end;
+    margin: $ten $zero;
+    background-color: #ab0012;
+    padding: $ten;
+    color: $white;
+    border-radius: $ten - 7;
+
+    span {
+      margin: $zero $ten * 2;
+    }
+  }
+}
+
+
+#bgOverlay {
+  display: $none;
+  width: $full;
+  height: $full;
+  background-color: rgba(0, 0, 0, .7);
+  position: fixed;
+  top: $zero;
+  left: $zero;
+}
+
+#popup #addToCardDone #tblCart tr td .quantity,
+#popup #addToCardDone #tblCart tr td .removeItem {
+  width: $full;
+}
+
+
+
+
+@import './media.scss'

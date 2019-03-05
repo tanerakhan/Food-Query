@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif; }
+
+body {
+  background-color: #fcfcfc; }
+
+img {
+  max-width: 100%; }
+
+a {
+  text-decoration: none;
+  display: block; }
+
+li {
+  list-style-type: none; }
+
+.container header {
+  width: 100%;
+  background-color: #ededed;
+  border-bottom: 1px #d8d8d8 solid;
+  display: flex; }
+  .container header .headerEl {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    text-transform: uppercase;
+    color: #ab0012;
+    font-weight: 700;
+    letter-spacing: -0.5px; }
+    .container header .headerEl span,
+    .container header .headerEl div {
+      width: 50%;
+      text-align: center;
+      padding: 20px 10px; }
+
+.container section {
+  margin: 10px 0; }
+  .container section .search {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto; }
+    .container section .search input {
+      border: 1px #ededed solid;
+      padding: 10px;
+      width: 100%;
+      border-radius: 3px;
+      font-size: 13px;
+      color: #292929;
+      margin: 10px 0; }
+  .container section .content {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #efefef;
+    padding: 10px;
+    border-radius: 3px; }
+    .container section .content .searchHeadLine {
+      background-color: #fff;
+      padding: 10px;
+      border: 1px #ededed solid;
+      border-radius: 3px; }
+      .container section .content .searchHeadLine span {
+        font-size: 12px;
+        font-weight: 700;
+        color: #ab0012;
+        text-transform: uppercase; }
+    .container section .content .searchList {
+      background-color: #fff;
+      padding: 10px;
+      border: 1px #ededed solid;
+      border-radius: 3px;
+      margin-top: 10px; }
+      .container section .content .searchList #foodSearch div #templateForList {
+        background-color: #ab0012;
+        padding: 10px;
+        margin-top: 10px;
+        border-bottom: 1px #fff solid; }
+        .container section .content .searchList #foodSearch div #templateForList a {
+          color: #fff; }
+      .container section .content .searchList #foodSearch div #templateForListProduct {
+        background-color: #e1e1e1;
+        border-bottom: 1px #fff solid;
+        padding: 10px; }
+      .container section .content .searchList #foodSearch div div {
+        padding: 5px;
+        border-radius: 3px; }
+        .container section .content .searchList #foodSearch div div a {
+          color: #484848; }
+          .container section .content .searchList #foodSearch div div a .listItem {
+            display: flex;
+            width: 100%;
+            align-items: center; }
+            .container section .content .searchList #foodSearch div div a .listItem div {
+              width: 33.33333%;
+              display: flex;
+              justify-content: center; }
+              .container section .content .searchList #foodSearch div div a .listItem div button {
+                background-color: transparent;
+                border: 1px #48912a solid;
+                color: #48912a;
+                width: 100%;
+                padding: 10px;
+                border-radius: 3px;
+                font-size: 13px;
+                text-transform: capitalize;
+                cursor: pointer;
+                transition: 0.5s ease; }
+                .container section .content .searchList #foodSearch div div a .listItem div button:hover {
+                  background-color: #48912a;
+                  color: #fff; }
+
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  color: #928181;
+  border-radius: 3px;
+  width: 50%; }
+  #popup form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center; }
+    #popup form table {
+      width: 100%;
+      padding: 10px;
+      background-color: #e4e4e4;
+      border-radius: 7px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      color: #484848; }
+      #popup form table tr td {
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 3px; }
+        #popup form table tr td input {
+          width: 100%;
+          border: 1px #dedede solid;
+          border-radius: 3px;
+          padding: 10px; }
+    #popup form #btnAddProduct {
+      background-color: transparent;
+      border: 1px #48912a solid;
+      color: #48912a;
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      font-size: 13px;
+      text-transform: capitalize;
+      cursor: pointer;
+      transition: 0.5s ease; }
+      #popup form #btnAddProduct:hover {
+        background-color: #48912a;
+        color: #fff; }
+  #popup #addToCardDesc .addDelButton {
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #48912a; }
+  #popup #addToCardDesc table,
+  #popup #addToCardDone table {
+    width: 100%;
+    padding: 10px;
+    background-color: #e4e4e4;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #484848; }
+    #popup #addToCardDesc table tr td,
+    #popup #addToCardDone table tr td {
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 3px; }
+      #popup #addToCardDesc table tr td input,
+      #popup #addToCardDone table tr td input {
+        width: 100%;
+        border: 1px #dedede solid;
+        border-radius: 3px;
+        padding: 10px; }
+  #popup #addToCardDone #tblCart tr td button {
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 13px; }
+    #popup #addToCardDone #tblCart tr td button:nth-child(2) {
+      margin-right: 10px; }
+  #popup #addToCardDone #tblCart tr td .quantity {
+    border: none;
+    background-color: #48912a;
+    color: #fff; }
+  #popup #addToCardDone #tblCart tr td .removeItem {
+    border: none;
+    background-color: #ab0012;
+    color: #fff; }
+  #popup .totalPrice {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+    background-color: #ab0012;
+    padding: 10px;
+    color: #fff;
+    border-radius: 3px; }
+    #popup .totalPrice span {
+      margin: 0 20px; }
+
+#bgOverlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+#popup #addToCardDone #tblCart tr td .quantity,
+#popup #addToCardDone #tblCart tr td .removeItem {
+  width: 100%; }
+
+@media screen and (min-width: 281px) and (max-width: 800px) {
+  #popup {
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 350px; } }

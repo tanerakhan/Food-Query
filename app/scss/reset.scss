@@ -1,0 +1,25 @@
+@import './var.scss';
+
+* {
+    margin: $zero;
+    padding: $zero;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #fcfcfc
+}
+
+img {
+    max-width: $full;
+}
+
+a {
+    text-decoration: $none;
+    display: $block
+}
+
+li {
+    list-style-type: $none;
+}

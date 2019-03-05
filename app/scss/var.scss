@@ -1,0 +1,27 @@
+$zero : 0;
+$full:100%;
+$ten: 10px;
+$flex:flex;
+$block:block;
+$center: center;
+$none: none;
+$white: #fff;
+
+
+@mixin addToCard {
+    background-color: transparent;
+    border: 1px #48912a solid;
+    color: #48912a;
+    width: $full;
+    padding: $ten;
+    border-radius: $ten - 7;
+    font-size: $ten + 3;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: 0.5s ease;
+
+    &:hover {
+        background-color: #48912a;
+        color: $white;
+    }
+}

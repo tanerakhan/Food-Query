@@ -1,7 +1,8 @@
 var listItem = document.getElementsByClassName('searchList');
 var section = document.querySelector('section');
 
-var requestURL = 'http://localhost:3004/d';
+/* var requestURL = 'http://localhost:3004/d'; */
+var requestURL = 'https://tanerakhan.com/yemeksepeti/response.php/d';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
@@ -9,8 +10,7 @@ request.send();
 request.onload = function () {
     var superHeroes = request.response;
     populateHeader(superHeroes);
-    /*     showHeroes(superHeroes);
-     */
+
 }
 
 
@@ -49,6 +49,7 @@ function template(templateid, data, templateName) {
 }
 
 function populateHeader(jsonObj) {
+    console.log(jsonObj);
     var x = "";
     var jsonObj, i, j = "";
     var tmp;
